@@ -1,0 +1,17 @@
+;---------------------------------------------------
+; Programa:Contador Decrescente
+; Autor:Jefferson Veiga
+; Data:30/05/2025
+;---------------------------------------------------
+      ORG 0   ;pseudo-instrução: indica onde iniciar o programa na memória
+      LDA VAL ; carrega no acumulador o conteúdo que esta guardado na variavel VAL
+LACO: OUT 0  ; mostra na saida o conteudo do acumulador
+      SUB PASSO ;decrementa do acumulador a quantia armazenada pela variavel PASSO
+      JN FIM ;testa se o valor no acumulador chegou a 0: se sim salta para FIM
+      STA 60 ; se nao chegou ao fim guarda o valor do acumulador no endereço 60(opcional)
+      JMP LACO ;
+
+FIM:  HLT  ;para a execução do programa
+
+VAL: DB 11  ;cria na memória uma constante com o valor 9
+PASSO: DB 1 ; carrega na memória uma constante com valor 1
